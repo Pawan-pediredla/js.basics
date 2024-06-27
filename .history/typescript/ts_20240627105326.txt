@@ -1,0 +1,48 @@
+Generics: Allows writing reusable code components that work with a variety of types.
+
+Interfaces and Type Aliases: Define the shape of objects or describe complex types.
+
+Union Types and Intersection Types: Union allows a value to be one of several types, while intersection combines multiple types into one.
+
+Type Inference: TypeScript can often infer types based on how variables and functions are used, reducing the need for explicit type annotations.
+
+Advanced Types: Includes conditional types (T extends U ? X : Y), mapped types (transforms keys in one type to another), and template literal types (for creating new string literals).
+
+Decorators: Used for adding metadata or behavior to classes, methods, or properties.
+
+Type Guards and Type Assertions: Techniques for working with union types or dynamically typed values safely.
+
+Modules and Namespaces: Organize code into reusable units and manage dependencies.
+Conditional Types: Conditional types allow you to create types that depend on other types. For example:
+
+typescript
+Copy code
+type NonNullable<T> = T extends null | undefined ? never : T;
+This type ensures that NonNullable<T> excludes null and undefined from T.
+
+Mapped Types: Mapped types transform the properties of one type into another type. For example:
+
+typescript
+Copy code
+type OptionsFlags<Type> = {
+    [Property in keyof Type]: boolean;
+};
+This creates a type where all properties of Type are converted into boolean flags.
+
+Template Literal Types: Template literal types allow the definition of string literal types that can be based on computed values. For example:
+
+typescript
+Copy code
+type Events = 'click' | 'mouseover';
+type UIEvent<T extends Events> = { type: T, target: HTMLElement };
+Here, UIEvent is a generic type that accepts only specific event types.
+
+Declaration Merging: TypeScript allows multiple declarations to be combined into a single definition. This is useful when extending interfaces or adding properties to existing types.
+
+Module Augmentation: Extend modules or libraries with new functionality without modifying the original source. This is particularly useful when working with third-party libraries.
+
+TypeScript Transformers: Transformers allow you to hook into TypeScript's compilation process and modify the abstract syntax tree (AST). This can be used for custom transformations or optimizations.
+
+Decorators: Decorators provide a way to add annotations and metadata to classes, methods, or properties at design time. They are widely used in frameworks like Angular and libraries like MobX.
+
+TypeScript and JavaScript Interoperability: TypeScript allows seamless integration with existing JavaScript codebases, gradually adopting TypeScript features and types as needed.

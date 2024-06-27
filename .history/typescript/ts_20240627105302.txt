@@ -1,0 +1,15 @@
+Generics: Allows writing reusable code components that work with a variety of types.
+
+Interfaces and Type Aliases: Define the shape of objects or describe complex types.
+
+Union Types and Intersection Types: Union allows a value to be one of several types, while intersection combines multiple types into one.
+
+Type Inference: TypeScript can often infer types based on how variables and functions are used, reducing the need for explicit type annotations.
+
+Advanced Types: Includes conditional types (T extends U ? X : Y), mapped types (transforms keys in one type to another), and template literal types (for creating new string literals).
+
+Decorators: Used for adding metadata or behavior to classes, methods, or properties.
+
+Type Guards and Type Assertions: Techniques for working with union types or dynamically typed values safely.
+
+Modules and Namespaces: Organize code into reusable units and manage dependencies.

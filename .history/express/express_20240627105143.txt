@@ -1,0 +1,66 @@
+Routing: Express allows you to define routes to handle incoming HTTP requests. Routes can be defined for different HTTP methods (GET, POST, PUT, DELETE, etc.) and URL patterns using app.get(), app.post(), app.put(), etc.
+
+Example:
+
+javascript
+Copy code
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+app.post('/users', (req, res) => {
+    // Handle POST request to create a new user
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on http://localhost:3000');
+});
+Middleware: Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. Middleware functions can perform tasks like parsing request bodies, logging, authentication, etc.
+
+Example:
+
+javascript
+Copy code
+app.use(express.json()); // Middleware to parse JSON request bodies
+app.use(loggerMiddleware); // Custom middleware function
+Template Engines: Express supports various template engines like EJS, Handlebars, Pug (formerly Jade), etc., for rendering dynamic HTML content on the server side.
+
+Example with EJS:
+
+javascript
+Copy code
+app.set('view engine', 'ejs');
+app.get('/profile', (req, res) => {
+    res.render('profile', { username: 'John Doe' });
+});
+Static Files: You can serve static files like images, CSS, and JavaScript using the express.static middleware.
+
+Example:
+
+javascript
+Copy code
+app.use(express.static('public')); // Serve files from the 'public' directory
+Error Handling: Express provides error handling middleware to handle errors that occur during request processing.
+
+Example:
+
+javascript
+Copy code
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
+RESTful API Development: Express is commonly used to build RESTful APIs. It supports features like middleware for request validation, route parameters, query parameters, etc., which are essential for API development.
+
+Example:
+
+javascript
+Copy code
+app.get('/api/users/:id', (req, res) => {
+    const userId = req.params.id;
+    // Fetch user data based on userId
+});
+Integration with Other Libraries: Express can be easily integrated with other libraries and frameworks like MongoDB (via Mongoose), authentication middleware (Passport.js), WebSocket libraries (Socket.io), etc.

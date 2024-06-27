@@ -1,0 +1,38 @@
+Schema Design Strategies:
+
+Embedded Data Models: Designing schemas to embed related data within a single document can improve read performance by reducing the need for joins.
+Normalization vs. Denormalization: Choosing between normalized (using references between documents) and denormalized (embedding related data) data models based on query patterns and data access requirements.
+Indexing Strategies:
+
+Compound Indexes: Creating indexes on multiple fields to optimize queries that filter on multiple criteria.
+Text Indexes: Using text indexes for efficient text search queries.
+Geospatial Indexes: Storing and querying geospatial data for location-based services.
+Aggregation Framework:
+
+Pipeline Stages: Using various stages like $match, $group, $project, and $lookup to perform complex aggregation operations across multiple documents.
+Aggregation Optimization: Techniques like using indexes, $sort and $limit stages strategically, and leveraging $facet for multi-faceted aggregations.
+Replication and High Availability:
+
+Replica Sets: Configuring replica sets for automatic failover and data redundancy.
+Read Preferences: Directing read operations to different replica set members based on requirements (e.g., reading from secondaries for scaling read operations).
+Sharding:
+
+Shard Key Selection: Choosing an appropriate shard key to evenly distribute data across shards and optimize query performance.
+Query Routing: Understanding how MongoDB routes queries to the correct shard based on the shard key.
+Transactions:
+
+Multi-Document Transactions: Ensuring data consistency across multiple documents within a single transaction.
+Retryable Writes: Handling transient network errors and automatically retrying write operations.
+Change Streams:
+
+Real-time Data Changes: Using change streams to listen for real-time changes in the database, enabling reactive applications.
+GridFS:
+
+Storing Large Files: Using GridFS for storing and retrieving large files (e.g., images, videos) that exceed the BSON document size limit of 16 MB.
+Security:
+
+Authentication and Authorization: Configuring MongoDB for secure access using authentication mechanisms (e.g., SCRAM, x.509 certificates) and role-based access control (RBAC).
+Performance Optimization:
+
+Profiling and Monitoring: Using tools like MongoDB Compass, mongostat, and mongotop to monitor database performance and identify bottlenecks.
+Query Optimization: Analyzing and optimizing query performance using the explain() method and index utilization.
